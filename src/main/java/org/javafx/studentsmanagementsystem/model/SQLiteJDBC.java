@@ -19,7 +19,7 @@ public class SQLiteJDBC {
 			if (dbExists) {
 				System.out.println("database \"my.db\" already exists");
 			} else {
-				System.out.println("database doesn't exist. Let's make a new one");
+				System.out.println("Database doesn't exist. Let's make a new one");
 				Class.forName("org.sqlite.JDBC");
 				c = DriverManager.getConnection("jdbc:sqlite:my.db");
 				System.out.println("Opened database successfully");

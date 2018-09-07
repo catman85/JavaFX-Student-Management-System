@@ -1,24 +1,21 @@
 package main.java.org.javafx.studentsmanagementsystem.controller;
 
+import java.util.ArrayList;
+
+import com.jfoenix.controls.JFXButton;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableRow;
-import javafx.scene.control.cell.PropertyValueFactory;
-
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.input.MouseButton;
-import javafx.stage.Stage;
+import javafx.scene.control.cell.PropertyValueFactory;
 import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Professor;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
-import javafx.scene.image.ImageView;
-import java.util.ArrayList;
 
 public class RegisterController {
 	
@@ -32,7 +29,8 @@ public class RegisterController {
 	private TableColumn<Professor,String> registerProfColumn;
 	
 	@FXML
-	private ImageView studRegisterBack;
+	private JFXButton studRegisterBack;
+	
 	@FXML
 	private Button studRegisterBtn;
 	
@@ -60,24 +58,24 @@ public class RegisterController {
 		
 		// Add data to the table
 		registerTableView.setItems(registerData);
+		
+		//studRegisterBack
+		studRegisterBack.setOnAction(a -> {
+			System.out.println("Going to back to student's dashboard fxml");
+			try {
+				//--------------------Go to Login Page -------------
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "StudentController.fxml"));
+				Parent root1 = (Parent) fxmlLoader.load();
+				Main.setContent(root1, "Student Home");
+			} catch (Exception es) {
+				es.printStackTrace();
+			}
+		});
 	}
 	
 	private void addData() {
 		for (int j = 0; j < profs.size(); j++) {
 			registerData.addAll(FXCollections.observableArrayList(profs.get(j)));
-		}
-	}
-	
-	@FXML
-	private void onRegisterBackBtnClicked() {
-		System.out.println("Going to back to student's dashboard fxml");
-		try {
-			//--------------------Go to Login Page -------------
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "StudentController.fxml"));
-			Parent root1 = (Parent) fxmlLoader.load();
-			Main.setContent(root1, "Student Home");
-		} catch (Exception es) {
-			es.printStackTrace();
 		}
 	}
 	

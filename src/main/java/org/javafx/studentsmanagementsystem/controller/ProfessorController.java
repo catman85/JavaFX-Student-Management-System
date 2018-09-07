@@ -7,7 +7,6 @@ import com.jfoenix.controls.JFXButton;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -22,10 +21,18 @@ import main.java.org.javafx.studentsmanagementsystem.model.Grade;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 
 public class ProfessorController {
+	
+	@FXML
+	private JFXButton rateStudent;
+	
 	@FXML
 	private Label profControllerId;
+	
 	@FXML
 	private Label profControllerName;
+	
+	@FXML
+	private JFXButton signOut;
 	
 	@FXML
 	private TableView<Grade> profTableView;
@@ -35,9 +42,6 @@ public class ProfessorController {
 	private TableColumn<Grade,String> profStudNameColumn;
 	@FXML
 	private TableColumn<Grade,String> profGradeColumn;
-	
-	@FXML
-	private JFXButton profSignOut;
 	
 	private ArrayList<Grade> grades = SQLiteJDBC.findGrades();
 	
@@ -60,8 +64,11 @@ public class ProfessorController {
 		//Add data to the table
 		profTableView.setItems(registeredData);
 		
+		//rateStudent
+		rateStudent.setOnAction(a -> rateStudent());
+		
 		//profSignOut
-		profSignOut.setOnAction(a -> {
+		signOut.setOnAction(a -> {
 			try {
 				//--------------------Go to Login Page -------------
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "MainController.fxml"));
@@ -73,7 +80,7 @@ public class ProfessorController {
 		});
 	}
 	
-	public void onButtonClickProf(ActionEvent a) {
+	public void rateStudent() {
 		Grade gr = null;
 		Integer grade = null;
 		System.out.println("Trying to grade a student...");

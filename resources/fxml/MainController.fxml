@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.StackPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="specialJFXTabPane" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.studentsmanagementsystem.controller.MainController">
    <children>
       <JFXTabPane>
@@ -21,7 +20,7 @@
                <content>
                   <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="304.0" prefWidth="592.0" style="-fx-background-color: #505050;">
                      <children>
-                        <Button fx:id="signIn" layoutX="227.0" layoutY="239.0" mnemonicParsing="false" onAction="#onClickSignIn" prefHeight="37.0" prefWidth="186.0" style="-fx-background-radius: 0;" styleClass="jfx-button-green" text="Log In" />
+                        <Button fx:id="signIn" focusTraversable="false" layoutX="227.0" layoutY="239.0" mnemonicParsing="false" onAction="#onClickSignIn" prefHeight="37.0" prefWidth="186.0" style="-fx-background-radius: 0;" styleClass="jfx-button-green" text="Log In" />
                         <FontIcon iconColor="WHITE" iconLiteral="fas-user-circle" iconSize="32" layoutX="110.0" layoutY="114.0" />
                         <TextField fx:id="signMail" layoutX="178.0" layoutY="87.0" prefHeight="30.0" prefWidth="342.0" promptText="E-mail" styleClass="dark-text-field" />
                         <ToggleButton fx:id="signInToggle" layoutX="271.0" layoutY="31.0" mnemonicParsing="false" onAction="#changeToggleText" styleClass="toggle-button3" text="I am a Teacher" />

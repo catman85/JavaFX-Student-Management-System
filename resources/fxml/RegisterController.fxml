@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.studentsmanagementsystem.application.RegisterController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.studentsmanagementsystem.controller.RegisterController">
    <children>
-       <TableView fx:id="registerTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="401.0" prefWidth="600.0">
+       <TableView fx:id="registerTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="401.0" prefWidth="600.0" styleClass="media-table-view">
            <columns>
                <TableColumn fx:id="registerCourseColumn" prefWidth="250.0" text="Course" />
                <TableColumn fx:id="registerProfIdColumn" prefWidth="95.0" text="Teacher's ID" />
@@ -18,12 +19,16 @@
        </TableView>
       <AnchorPane layoutY="318.0" prefHeight="83.0" prefWidth="600.0">
          <children>
-            <Button layoutX="258.0" layoutY="26.0" mnemonicParsing="false" onAction="#onRegisterBtnClicked" text="Enroll" />
-            <ImageView fx:id="studRegisterBack" fitHeight="46.0" fitWidth="36.0" layoutX="30.0" layoutY="24.0" onMouseClicked="#onRegisterBackBtnClicked" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../image/icons8-back-52.png" />
-               </image>
-            </ImageView>
+            <Button focusTraversable="false" layoutX="215.0" layoutY="19.0" mnemonicParsing="false" onAction="#onRegisterBtnClicked" prefHeight="36.0" prefWidth="187.0" text="Enroll">
+               <styleClass>
+                  <String fx:value="jfx-button-green" />
+                  <String fx:value="jfx-button" />
+               </styleClass></Button>
+            <JFXButton fx:id="studRegisterBack" focusTraversable="false" layoutX="14.0" layoutY="7.0" prefHeight="70.0" prefWidth="93.0" styleClass="jfx-button-yellow" text="Back">
+               <graphic>
+                  <FontIcon iconColor="WHITE" iconLiteral="typ-arrow-back" />
+               </graphic>
+            </JFXButton>
          </children></AnchorPane>
    
    </children>

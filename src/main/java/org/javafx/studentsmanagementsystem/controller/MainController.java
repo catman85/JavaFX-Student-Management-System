@@ -2,16 +2,17 @@ package main.java.org.javafx.studentsmanagementsystem.controller;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+import com.jfoenix.controls.JFXRadioButton;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.stage.Stage;
+import javafx.scene.control.ToggleGroup;
 import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Professor;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
@@ -20,57 +21,58 @@ import main.java.org.javafx.studentsmanagementsystem.model.Student;
 public class MainController {
 	
 	@FXML
-	private ToggleButton signInToggle;
-	@FXML
 	private Button signIn;
 	
 	@FXML
+	private TextField signMail;
+	
+	@FXML
+	private PasswordField signPass;
+	
+	@FXML
+	private ToggleGroup loginType;
+	
+	@FXML
+	private TextField studName;
+	
+	@FXML
+	private TextField studMail;
+	
+	@FXML
+	private Button registerStud;
+	
+	@FXML
+	private PasswordField studPass;
+	
+	@FXML
+	private PasswordField studPass2;
+	
+	@FXML
 	private TextField profName;
+	
 	@FXML
 	private TextField profMail;
+	
 	@FXML
-	private TextField profPass;
-	@FXML
-	private TextField profPass2;
+	private Button registerProf;
+	
 	@FXML
 	private TextField profCourse;
 	
 	@FXML
-	private TextField studName;
-	@FXML
-	private TextField studMail;
-	@FXML
-	private TextField studPass;
-	@FXML
-	private TextField studPass2;
+	private PasswordField profPass;
 	
 	@FXML
-	private TextField signMail;
-	@FXML
-	private TextField signPass;
+	private PasswordField profPass2;
 	
 	//those that signed in succesfully
 	public static Student stud;
 	public static Professor prof;
 	
-	private static Boolean b = true;
-	
-	public void changeToggleText(ActionEvent e) {
-		//        System.out.println(signInToggle.getText());
-		if (b) {
-			signInToggle.setText("I am a Teacher");
-			b = false;
-		} else {
-			signInToggle.setText("I am a Student");
-			b = true;
-		}
-		
-	}
-	
 	public void onClickSignIn(ActionEvent e) {
 		
 		//true == student
-		if (b) {
+		if ( "Student".equals( ( (JFXRadioButton) loginType.getSelectedToggle() ).getText())) {
 			//search in the student table
 			this.stud = SQLiteJDBC.findStud(addThingies(signMail.getText()), addThingies(DigestUtils.sha1Hex(signPass.getText())));
 			

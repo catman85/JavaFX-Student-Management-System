@@ -1,113 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.studentsmanagementsystem.controller.mainController">
-  <tabs>
-    <Tab text="Log In">
-         <content>
-            <AnchorPane prefHeight="304.0" prefWidth="592.0">
-               <children>
-                  <Button fx:id="signIn" layoutX="268.0" layoutY="230.0" mnemonicParsing="false" onAction="#onClickSignIn" text="Log In" />
-                  <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="109.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/icons8-contacts-50.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="108.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../image/icons8-lock-32.png" />
-                     </image>
-                  </ImageView>
-                  <TextField fx:id="signMail" layoutX="178.0" layoutY="87.0" prefHeight="30.0" prefWidth="250.0" promptText="E-mail" />
-                  <ToggleButton fx:id="signInToggle" layoutX="240.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeToggleText" text="I am a Teacher" />
-                  <PasswordField fx:id="signPass" layoutX="178.0" layoutY="165.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" />
-               </children></AnchorPane>
-         </content>
-    </Tab>
-    <Tab text="Register">
-         <content>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-              <tabs>
-                <Tab text="Student">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <TextField fx:id="studName" layoutX="93.0" layoutY="62.0" promptText="Name" />
-                              <TextField fx:id="studMail" layoutX="93.0" layoutY="161.0" promptText="E-mail" />
-                              <Button fx:id="registerStud" layoutX="260.0" layoutY="246.0" mnemonicParsing="false" onAction="#onRegisterStud" text="Register" />
-                              <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="26.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-contacts-50.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="26.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-new-post-32.png" />
-                                 </image></ImageView>
-                              <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="305.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-lock-32.png" />
-                                 </image></ImageView>
-                              <ImageView fitHeight="35.0" fitWidth="43.0" layoutX="306.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-sync-32.png" />
-                                 </image></ImageView>
-                              <PasswordField fx:id="studPass" layoutX="360.0" layoutY="63.0" promptText="Password" />
-                              <PasswordField fx:id="studPass2" layoutX="360.0" layoutY="161.0" promptText="Password Again" />
-                           </children></AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Teacher">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <TextField fx:id="profName" layoutX="93.0" layoutY="31.0" promptText="Name" />
-                              <TextField fx:id="profMail" layoutX="93.0" layoutY="96.0" promptText="e-mail" />
-                              <Button fx:id="registerProf" layoutX="260.0" layoutY="246.0" mnemonicParsing="false" onAction="#onRegisterProf" text="Register" />
-                              <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="32.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-contacts-50.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="32.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-new-post-32.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="306.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-lock-32.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="35.0" fitWidth="43.0" layoutX="307.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-sync-32.png" />
-                                 </image>
-                              </ImageView>
-                              <TextField fx:id="profCourse" layoutX="207.0" layoutY="184.0" promptText="Course" />
-                              <ImageView fitHeight="46.0" fitWidth="50.0" layoutX="141.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../image/icons8-course-32.png" />
-                                 </image>
-                              </ImageView>
-                              <PasswordField fx:id="profPass" layoutX="360.0" layoutY="32.0" promptText="Password" />
-                              <PasswordField fx:id="profPass2" layoutX="360.0" layoutY="96.0" promptText="Password Again" />
-                           </children>
-                        </AnchorPane>
-                     </content>
-                </Tab>
-              </tabs>
-            </TabPane>
-         </content>
-    </Tab>
-  </tabs>
-</TabPane>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="specialJFXTabPane" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTabPane>
+         <tabs>
+            <Tab text="Log In">
+               <content>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="304.0" prefWidth="592.0" style="-fx-background-color: #505050;">
+                     <children>
+                        <Button fx:id="signIn" layoutX="268.0" layoutY="230.0" mnemonicParsing="false" onAction="#onClickSignIn" text="Log In" />
+                        <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="109.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/icons8-contacts-50.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="108.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/icons8-lock-32.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="signMail" layoutX="178.0" layoutY="87.0" prefHeight="30.0" prefWidth="250.0" promptText="E-mail" styleClass="dark-text-field" />
+                        <ToggleButton fx:id="signInToggle" layoutX="240.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeToggleText" styleClass="toggle-button3" text="I am a Teacher" />
+                        <PasswordField fx:id="signPass" layoutX="178.0" layoutY="165.0" prefHeight="30.0" prefWidth="250.0" promptText="Password" styleClass="dark-text-area" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Register">
+               <content>
+                  <JFXTabPane side="LEFT">
+                     <tabs>
+                        <Tab text="Student">
+                           <content>
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="studName" layoutX="93.0" layoutY="62.0" promptText="Name" />
+                                    <TextField fx:id="studMail" layoutX="93.0" layoutY="161.0" promptText="E-mail" />
+                                    <Button fx:id="registerStud" layoutX="260.0" layoutY="246.0" mnemonicParsing="false" onAction="#onRegisterStud" text="Register" />
+                                    <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="26.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-contacts-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="26.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-new-post-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="305.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-lock-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="35.0" fitWidth="43.0" layoutX="306.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-sync-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <PasswordField fx:id="studPass" layoutX="360.0" layoutY="63.0" promptText="Password" />
+                                    <PasswordField fx:id="studPass2" layoutX="360.0" layoutY="161.0" promptText="Password Again" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Teacher">
+                           <content>
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TextField fx:id="profName" layoutX="93.0" layoutY="31.0" promptText="Name" />
+                                    <TextField fx:id="profMail" layoutX="93.0" layoutY="96.0" promptText="e-mail" />
+                                    <Button fx:id="registerProf" layoutX="260.0" layoutY="246.0" mnemonicParsing="false" onAction="#onRegisterProf" text="Register" />
+                                    <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="32.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-contacts-50.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="44.0" layoutX="32.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-new-post-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="306.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-lock-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="35.0" fitWidth="43.0" layoutX="307.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-sync-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="profCourse" layoutX="207.0" layoutY="184.0" promptText="Course" />
+                                    <ImageView fitHeight="46.0" fitWidth="50.0" layoutX="141.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../image/icons8-course-32.png" />
+                                       </image>
+                                    </ImageView>
+                                    <PasswordField fx:id="profPass" layoutX="360.0" layoutY="32.0" promptText="Password" />
+                                    <PasswordField fx:id="profPass2" layoutX="360.0" layoutY="96.0" promptText="Password Again" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</StackPane>

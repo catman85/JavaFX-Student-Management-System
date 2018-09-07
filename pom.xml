@@ -157,6 +157,32 @@
 			<artifactId>jfoenix</artifactId>
 			<version>9.0.4</version>
 		</dependency>
-
+		<!-- ikonli -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-javafx</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<!-- Ikonli Font Icons -->
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-typicons-pack</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-fontawesome-pack</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-material-pack</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kordamp.ikonli</groupId>
+			<artifactId>ikonli-fontawesome5-pack</artifactId>
+			<version>2.3.0</version>
+		</dependency>
 	</dependencies>
 </project>

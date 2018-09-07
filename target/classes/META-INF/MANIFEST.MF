@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: GOXR3PLUSSTUDIO
+Build-Jdk: 9.0.4
+Main-Class: main.java.com.goxr3plus.xr3player.application.Main
+Created-By: Maven Integration for Eclipse
+

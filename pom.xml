@@ -19,7 +19,7 @@
 	</properties>
 
 	<build>
-		<finalName>XR3Player</finalName>
+		<finalName>FXStudentsManagement</finalName>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>
 			<resource>
@@ -62,8 +62,8 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>main.java.com.goxr3plus.xr3player.application.Main</mainClass>
-							<classpathPrefix>XR3Player_lib/</classpathPrefix>
+							<mainClass> main.java.org.javafx.studentsmanagementsystem.application.Main</mainClass>
+							<classpathPrefix>FXLibrary_lib/</classpathPrefix>
 						</manifest>
 					</archive>
 				</configuration>
@@ -84,7 +84,7 @@
 						<configuration>
 							<!-- exclude junit, we need runtime dependency only -->
 							<excludeArtifactIds> junit </excludeArtifactIds>
-							<outputDirectory>${project.build.directory}/XR3Player_lib/</outputDirectory>
+							<outputDirectory>${project.build.directory}/FXLibrary_lib/</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
@@ -115,7 +115,7 @@
 					<descriptors>
 						<descriptor>src/assembly/assembly.xml</descriptor>
 					</descriptors>
-					<finalName>XR3Player Update ${my.project.version}</finalName>
+					<finalName>FXStudentsManagement ${my.project.version}</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 				<executions>

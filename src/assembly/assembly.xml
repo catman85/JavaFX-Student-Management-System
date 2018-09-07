@@ -1,0 +1,23 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/3.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/3.0.0 http://maven.apache.org/xsd/assembly-3.0.0.xsd">
+	<id>bin</id>
+	<formats>
+		<format>zip</format>
+		<!-- <format>dir</format> -->
+	</formats>
+	<includeBaseDirectory> false </includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<outputDirectory>.</outputDirectory>
+			<includes>
+			    <!-- <include>XR3Player.exe</include> -->
+				<include>*.jar</include>
+				<include>FXLibrary_lib</include>
+				<include>FXLibrary_lib/*</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>

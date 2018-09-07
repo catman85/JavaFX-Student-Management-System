@@ -1,20 +1,22 @@
 package main.java.org.javafx.studentsmanagementsystem.controller;
 
+import java.util.ArrayList;
+import java.util.Optional;
+
+import com.jfoenix.controls.JFXButton;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.util.ArrayList;
-import java.util.Optional;
-
-import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Grade;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
@@ -35,7 +37,7 @@ public class ProfessorController {
 	private TableColumn<Grade,String> profGradeColumn;
 	
 	@FXML
-	private ImageView profSignOut;
+	private JFXButton profSignOut;
 	
 	private ArrayList<Grade> grades = SQLiteJDBC.findGrades();
 	
@@ -43,7 +45,7 @@ public class ProfessorController {
 	
 	@FXML
 	public void initialize() {
-		profControllerId.setText(( "" + MainController.prof.getId() ));
+		profControllerId.setText( ( "" + MainController.prof.getId() ));
 		profControllerName.setText(MainController.prof.getName());
 		
 		addData();
@@ -57,9 +59,21 @@ public class ProfessorController {
 		
 		//Add data to the table
 		profTableView.setItems(registeredData);
+		
+		//profSignOut
+		profSignOut.setOnAction(a -> {
+			try {
+				//--------------------Go to Login Page -------------
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "MainController.fxml"));
+				Parent root1 = (Parent) fxmlLoader.load();
+				Main.setContent(root1, "Login Home");
+			} catch (Exception es) {
+				es.printStackTrace();
+			}
+		});
 	}
 	
-	public void onButtonClickProf(ActionEvent __) {
+	public void onButtonClickProf(ActionEvent a) {
 		Grade gr = null;
 		Integer grade = null;
 		System.out.println("Trying to grade a student...");
@@ -120,18 +134,6 @@ public class ProfessorController {
 			registeredData.addAll(FXCollections.observableArrayList(grades.get(j)));
 		}
 		
-	}
-	
-	@FXML
-	private void onProfSignOut() {
-		try {
-			//--------------------Go to Login Page -------------
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "MainController.fxml"));
-			Parent root1 = (Parent) fxmlLoader.load();
-			Main.setContent(root1, "Login Home");
-		} catch (Exception es) {
-			es.printStackTrace();
-		}
 	}
 	
 	private static boolean between(int i , int minValueInclusive , int maxValueInclusive) {

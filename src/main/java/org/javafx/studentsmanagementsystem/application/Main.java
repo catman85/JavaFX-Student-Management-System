@@ -47,6 +47,7 @@ public class Main extends Application {
 		
 		// Borderless Scene
 		borderlessScene = new BorderlessScene(window, StageStyle.UNDECORATED, root, 600, 400);
+		borderlessScene.getStylesheets().add(getClass().getResource("/css/application.css").toExternalForm());
 		borderlessScene.setMoveControl(topBar);
 		primaryStage.setScene(borderlessScene);
 		primaryStage.show();
@@ -55,7 +56,7 @@ public class Main extends Application {
 		SQLiteJDBC.makeDb();
 	}
 	
-	public static void setContent(Node node,String title) {
+	public static void setContent(Node node , String title) {
 		
 		root.setCenter(null);
 		root.setCenter(node);

@@ -13,10 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.util.Duration;
 import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Professor;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 import main.java.org.javafx.studentsmanagementsystem.model.Student;
+import main.java.org.javafx.studentsmanagementsystem.tools.JavaFXTools;
+import main.java.org.javafx.studentsmanagementsystem.tools.NotificationType;
 
 public class MainController {
 	
@@ -72,7 +75,7 @@ public class MainController {
 	public void onClickSignIn(ActionEvent e) {
 		
 		//true == student
-		if ( "Student".equals( ( (JFXRadioButton) loginType.getSelectedToggle() ).getText())) {
+		if ("Student".equals( ( (JFXRadioButton) loginType.getSelectedToggle() ).getText())) {
 			//search in the student table
 			this.stud = SQLiteJDBC.findStud(addThingies(signMail.getText()), addThingies(DigestUtils.sha1Hex(signPass.getText())));
 			
@@ -83,6 +86,7 @@ public class MainController {
 			}
 			
 			try {
+				
 				//--------------------Go to student  home-------------
 				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "StudentController.fxml"));
 				Parent root1 = (Parent) fxmlLoader.load();
@@ -234,16 +238,17 @@ public class MainController {
 	}
 	
 	public static void showAlert(Alert.AlertType a , String header , String body) {
-		Alert alert = new Alert(a);
-		if (a == Alert.AlertType.WARNING) {
-			alert.setTitle("Attention!");
-			
-		} else if (a == Alert.AlertType.INFORMATION) {
-			alert.setTitle("Success");
-		}
-		alert.setHeaderText(header);
-		alert.setContentText(body);
-		alert.showAndWait();
+		JavaFXTools.showNotification(header, body, Duration.seconds(5), NotificationType.INFORMATION);
+		//		Alert alert = new Alert(a);
+		//		if (a == Alert.AlertType.WARNING) {
+		//			alert.setTitle("Attention!");
+		//			
+		//		} else if (a == Alert.AlertType.INFORMATION) {
+		//			alert.setTitle("Success");
+		//		}
+		//		alert.setHeaderText(header);
+		//		alert.setContentText(body);
+		//		alert.showAndWait();
 	}
 	
 }

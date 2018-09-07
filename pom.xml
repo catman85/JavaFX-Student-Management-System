@@ -62,7 +62,8 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass> main.java.org.javafx.studentsmanagementsystem.application.Main</mainClass>
+							<mainClass>
+								main.java.org.javafx.studentsmanagementsystem.application.Main</mainClass>
 							<classpathPrefix>FXLibrary_lib/</classpathPrefix>
 						</manifest>
 					</archive>
@@ -196,6 +197,12 @@
 			<groupId>org.kordamp.ikonli</groupId>
 			<artifactId>ikonli-fontawesome5-pack</artifactId>
 			<version>2.3.0</version>
+		</dependency>
+		<!-- JAVAFX GRAPHICS LIBRARIES -->
+		<dependency>
+			<groupId>org.controlsfx</groupId>
+			<artifactId>controlsfx</artifactId>
+			<version>9.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

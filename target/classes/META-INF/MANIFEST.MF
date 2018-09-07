@@ -1,6 +1,8 @@
 Manifest-Version: 1.0
 Built-By: GOXR3PLUSSTUDIO
 Build-Jdk: 9.0.4
+Class-Path: XR3Player_lib/commons-codec-1.11.jar XR3Player_lib/sqlite-
+ jdbc-3.23.1.jar
 Main-Class: main.java.com.goxr3plus.xr3player.application.Main
 Created-By: Maven Integration for Eclipse
 

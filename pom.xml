@@ -89,19 +89,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-			<!-- duplicate-finder-maven-plugin -->
-			<!-- <plugin> <groupId>org.basepom.maven</groupId> <artifactId>duplicate-finder-maven-plugin</artifactId> 
-				<version>1.1.0</version> <executions> <execution> <id>default</id> <phase>verify</phase> 
-				<goals> <goal>check</goal> </goals> </execution> </executions> <configuration> 
-				<printEqualFiles>false</printEqualFiles> <failBuildInCaseOfDifferentContentConflict>false</failBuildInCaseOfDifferentContentConflict> 
-				<failBuildInCaseOfEqualContentConflict>false</failBuildInCaseOfEqualContentConflict> 
-				<failBuildInCaseOfConflict>false</failBuildInCaseOfConflict> <checkCompileClasspath>true</checkCompileClasspath> 
-				<checkRuntimeClasspath>true</checkRuntimeClasspath> <checkTestClasspath>true</checkTestClasspath> 
-				<skip>false</skip> <quiet>false</quiet> <preferLocal>true</preferLocal> <useResultFile>true</useResultFile> 
-				<resultFileMinClasspathCount>2</resultFileMinClasspathCount> <resultFile>${project.build.directory}/duplicate-finder-result.xml</resultFile> 
-				</configuration> </plugin> -->
-			<!-- code coverage -->
 			<plugin>
 				<groupId>org.eluder.coveralls</groupId>
 				<artifactId>coveralls-maven-plugin</artifactId>
@@ -152,6 +139,17 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.11</version>
+		</dependency>
+		<!-- DATABASE DRIVERS -->
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.23.1</version>
+		</dependency>
 	</dependencies>
-
 </project>

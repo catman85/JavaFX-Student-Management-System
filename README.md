@@ -28,7 +28,7 @@ A Java application for managing students teachers, and grades.
 
 # How to fork and support this project
 
-To build XR3Player, you will need:
+To build this project , you will need:
 
 * [JDK 9+]
 * [Maven](http://maven.apache.org/) - Version 3.5.3++ recommended

@@ -14,7 +14,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
-import main.java.org.javafx.studentsmanagementsystem.application.mainController;
+import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Professor;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 import javafx.scene.image.ImageView;
@@ -73,7 +73,7 @@ public class registerController {
 		System.out.println("Going to back to student's dashboard fxml");
 		try {
 			//new stage
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("stud.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "stud.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Student Home");

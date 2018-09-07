@@ -10,7 +10,7 @@ import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 public class Main extends Application {
 	
 	public final static String FXMLS = "/fxml/";
-	public final static String IMAGES = "/iamges/";
+	public final static String IMAGES = "/images/";
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {

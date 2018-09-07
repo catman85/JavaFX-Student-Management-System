@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.registerController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sampleregisterController">
    <children>
        <TableView fx:id="registerTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="401.0" prefWidth="600.0">
            <columns>
@@ -21,7 +21,7 @@
             <Button layoutX="258.0" layoutY="26.0" mnemonicParsing="false" onAction="#onRegisterBtnClicked" text="Enroll" />
             <ImageView fx:id="studRegisterBack" fitHeight="46.0" fitWidth="36.0" layoutX="30.0" layoutY="24.0" onMouseClicked="#onRegisterBackBtnClicked" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-back-52.png" />
+                  <Image url="@../image/icons8-back-52.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

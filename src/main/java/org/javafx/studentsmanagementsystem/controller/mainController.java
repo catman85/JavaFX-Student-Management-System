@@ -1,4 +1,4 @@
-package main.java.org.javafx.studentsmanagementsystem.application;
+package main.java.org.javafx.studentsmanagementsystem.controller;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
+import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Professor;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 import main.java.org.javafx.studentsmanagementsystem.model.Student;
@@ -109,7 +110,7 @@ public class mainController {
 				//new stage
 				System.out.println("going to professors dashboard\n");
 				System.out.println(prof.getCourse());
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("prof.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "prof.fxml"));
 				Parent root1 = (Parent) fxmlLoader.load();
 				Stage stage = new Stage();
 				stage.setTitle("Professor Home");

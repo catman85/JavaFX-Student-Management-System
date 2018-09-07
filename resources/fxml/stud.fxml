@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.studController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.studentsmanagementsystem.controller.studController">
    <children>
       <ToolBar prefHeight="45.0" prefWidth="600.0">
         <items>
@@ -20,7 +20,7 @@
             <Label fx:id="studControllerName" prefHeight="21.0" prefWidth="119.0" text="Forest Gump" />
             <ImageView fx:id="studSignOut" fitHeight="28.0" fitWidth="46.0" onMouseClicked="#onStudSignOut" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-exit-52.png" />
+                  <Image url="@../image/icons8-exit-52.png" />
                </image>
             </ImageView>
         </items>

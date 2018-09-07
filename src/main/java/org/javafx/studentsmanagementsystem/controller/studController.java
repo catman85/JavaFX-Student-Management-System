@@ -13,7 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import main.java.org.javafx.studentsmanagementsystem.application.mainController;
+import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Enrollment;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 import javafx.scene.image.ImageView;
@@ -73,7 +73,7 @@ public class studController {
 		System.out.println("Going to registration fxml");
 		try {
 			//new stage
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("register.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "register.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("Student Home");
@@ -98,7 +98,7 @@ public class studController {
 		System.out.println("Going back to login Screen");
 		try {
 			//new stage
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main.fxml"));
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "main.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
 			Stage stage = new Stage();
 			stage.setTitle("School");

@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javafx.scene.control.Alert;
-import main.java.org.javafx.studentsmanagementsystem.application.mainController;
+import main.java.org.javafx.studentsmanagementsystem.controller.mainController;
 
 public class SQLiteJDBC {
 	public static void makeDb() {

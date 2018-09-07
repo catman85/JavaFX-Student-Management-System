@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.profController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.studentsmanagementsystem.controller.profController">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="609.0">
          <items>
@@ -20,7 +20,7 @@
             <Label fx:id="profControllerName" prefHeight="21.0" prefWidth="234.0" text="  Mr.Shrek  " />
             <ImageView fx:id="profSignOut" fitHeight="30.0" fitWidth="38.0" onMouseClicked="#onProfSignOut" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-exit-52.png" />
+                  <Image url="@../image/icons8-exit-52.png" />
                </image>
             </ImageView>
          </items>

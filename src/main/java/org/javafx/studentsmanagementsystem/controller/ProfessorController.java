@@ -49,6 +49,9 @@ public class ProfessorController {
 	
 	@FXML
 	public void initialize() {
+		System.out.println("Entered Professor Initialize Method...");
+		
+		
 		profControllerId.setText( ( "" + MainController.prof.getId() ));
 		profControllerName.setText(MainController.prof.getName());
 		

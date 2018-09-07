@@ -74,48 +74,54 @@ public class MainController {
 	
 	public void onClickSignIn(ActionEvent e) {
 		
-		//true == student
-		if ("Student".equals( ( (JFXRadioButton) loginType.getSelectedToggle() ).getText())) {
-			//search in the student table
-			this.stud = SQLiteJDBC.findStud(addThingies(signMail.getText()), addThingies(DigestUtils.sha1Hex(signPass.getText())));
+		try {
 			
-			if (stud.getStudId().equals(-1)) {
-				showAlert(Alert.AlertType.WARNING, "Student not found", "Please fill the fields again!");
-				blankSign();
-				return;
-			}
-			
-			try {
+			//true == student
+			if ("Student".equals( ( (JFXRadioButton) loginType.getSelectedToggle() ).getText())) {
 				
-				//--------------------Go to student  home-------------
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "StudentController.fxml"));
-				Parent root1 = (Parent) fxmlLoader.load();
-				Main.setContent(root1, "Student home");
+				//search in the student table
+				this.stud = SQLiteJDBC.findStud(addThingies(signMail.getText()), addThingies(DigestUtils.sha1Hex(signPass.getText())));
 				
-			} catch (Exception es) {
-				es.printStackTrace();
-			}
-			
-		} else {
-			//search in the prof table
-			this.prof = SQLiteJDBC.findProf(addThingies(signMail.getText()), addThingies(DigestUtils.sha1Hex(signPass.getText())));
-			if (prof.getId().equals(-1)) {
-				showAlert(Alert.AlertType.WARNING, "Professor not found", "Please fill the fields again!");
-				blankSign();
-				return;
-			}
-			
-			try {
+				if (stud.getStudId().equals(-1)) {
+					showAlert(Alert.AlertType.WARNING, "Student not found", "Please fill the fields again!");
+					blankSign();
+					return;
+				}
 				
-				//--------------------Go to professor home-------------
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "ProfessorController.fxml"));
-				Parent root1 = (Parent) fxmlLoader.load();
-				Main.setContent(root1, "Professor Home");
+				try {
+					
+					//--------------------Go to student  home-------------
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "StudentController.fxml"));
+					Parent root1 = (Parent) fxmlLoader.load();
+					Main.setContent(root1, "Student home");
+					
+				} catch (Exception es) {
+					es.printStackTrace();
+				}
 				
-			} catch (Exception ep) {
-				ep.printStackTrace();
+			} else {
+				//search in the prof table
+				this.prof = SQLiteJDBC.findProf(addThingies(signMail.getText()), addThingies(DigestUtils.sha1Hex(signPass.getText())));
+				if (prof.getId().equals(-1)) {
+					showAlert(Alert.AlertType.WARNING, "Professor not found", "Please fill the fields again!");
+					blankSign();
+					return;
+				}
+				
+				try {
+					
+					//--------------------Go to professor home-------------
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "ProfessorController.fxml"));
+					Parent root1 = (Parent) fxmlLoader.load();
+					Main.setContent(root1, "Professor Home");
+					
+				} catch (Exception ep) {
+					ep.printStackTrace();
+				}
+				
 			}
-			
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 	

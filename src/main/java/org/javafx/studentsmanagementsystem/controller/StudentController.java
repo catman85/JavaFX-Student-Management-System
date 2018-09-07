@@ -49,6 +49,9 @@ public class StudentController {
 	
 	@FXML
 	public void initialize() {
+		System.out.println("Entered Student Initialize Method...");
+		
+		
 		studControllerID.setText(MainController.stud.getStudId().toString());
 		studControllerName.setText(MainController.stud.getName().toString());
 		
@@ -82,6 +85,7 @@ public class StudentController {
 			}
 		});
 		
+		System.err.println("Adding Student sign out action");
 		//signOut
 		signOut.setOnAction(a -> {
 			System.out.println("Going back to login Screen");

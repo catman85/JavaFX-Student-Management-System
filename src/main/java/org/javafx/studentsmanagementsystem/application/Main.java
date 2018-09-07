@@ -2,8 +2,8 @@ package main.java.org.javafx.studentsmanagementsystem.application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -33,7 +33,7 @@ public class Main extends Application {
 		topBar = new TopBar();
 		
 		//Content
-		Parent content = FXMLLoader.load(getClass().getResource(FXMLS + "main.fxml"));
+		Parent content = FXMLLoader.load(getClass().getResource(FXMLS + "MainController.fxml"));
 		
 		//Root 
 		root = new BorderPane();
@@ -46,13 +46,19 @@ public class Main extends Application {
 		primaryStage.setTitle("Students Management System");
 		
 		// Borderless Scene
-		borderlessScene = new BorderlessScene(window, StageStyle.UNDECORATED, root, 700, 500);
+		borderlessScene = new BorderlessScene(window, StageStyle.UNDECORATED, root, 600, 400);
 		borderlessScene.setMoveControl(topBar);
 		primaryStage.setScene(borderlessScene);
 		primaryStage.show();
 		
 		//Create the Database
 		SQLiteJDBC.makeDb();
+	}
+	
+	public static void setContent(Node node,String title) {
+		
+		root.setCenter(null);
+		root.setCenter(node);
 	}
 	
 	public static void main(String[] args) {

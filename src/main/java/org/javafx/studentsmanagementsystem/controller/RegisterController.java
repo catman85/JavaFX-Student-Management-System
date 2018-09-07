@@ -20,7 +20,7 @@ import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 
-public class registerController {
+public class RegisterController {
 	
 	@FXML
 	private TableView<Professor> registerTableView;
@@ -36,7 +36,7 @@ public class registerController {
 	@FXML
 	private Button studRegisterBtn;
 	
-	private ArrayList<Professor> profs = SQLiteJDBC.findCoursesUnregistered(mainController.stud);
+	private ArrayList<Professor> profs = SQLiteJDBC.findCoursesUnregistered(MainController.stud);
 	private ObservableList<Professor> registerData = FXCollections.observableArrayList();
 	
 	//    private ObservableList<Professor> registerData = FXCollections.observableArrayList(
@@ -72,16 +72,10 @@ public class registerController {
 	private void onRegisterBackBtnClicked() {
 		System.out.println("Going to back to student's dashboard fxml");
 		try {
-			//new stage
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "stud.fxml"));
+			//--------------------Go to Login Page -------------
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "StudentController.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setTitle("Student Home");
-			stage.setScene(new Scene(root1));
-			stage.show();
-			//close current stage
-			Stage finale = (Stage) registerTableView.getScene().getWindow();
-			finale.close();
+			Main.setContent(root1, "Student Home");
 		} catch (Exception es) {
 			es.printStackTrace();
 		}

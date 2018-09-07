@@ -58,4 +58,8 @@ public class TopBar extends BorderPane {
 		
 	}
 	
+	public void setTitle(String title) {
+		label.setText(title);
+	}
+	
 }

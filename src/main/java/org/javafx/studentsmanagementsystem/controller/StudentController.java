@@ -20,7 +20,7 @@ import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 
-public class studController {
+public class StudentController {
 	@FXML
 	private Button MenuBtn;
 	@FXML
@@ -42,14 +42,14 @@ public class studController {
 	@FXML
 	private ImageView studSignOut;
 	
-	private ArrayList<Enrollment> enroll = SQLiteJDBC.findCoursesRegistered(mainController.stud);
+	private ArrayList<Enrollment> enroll = SQLiteJDBC.findCoursesRegistered(MainController.stud);
 	
 	private ObservableList<Enrollment> registeredData = FXCollections.observableArrayList();
 	
 	@FXML
 	public void initialize() {
-		studControllerID.setText(mainController.stud.getStudId().toString());
-		studControllerName.setText(mainController.stud.getName().toString());
+		studControllerID.setText(MainController.stud.getStudId().toString());
+		studControllerName.setText(MainController.stud.getName().toString());
 		
 		addData();
 		
@@ -72,16 +72,12 @@ public class studController {
 		
 		System.out.println("Going to registration fxml");
 		try {
-			//new stage
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "register.fxml"));
+			
+			//--------------------Go to Login Page -------------
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "RegisterController.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setTitle("Student Home");
-			stage.setScene(new Scene(root1));
-			stage.show();
-			//close current stage
-			Stage finale = (Stage) MenuBtn.getScene().getWindow();
-			finale.close();
+			Main.setContent(root1, "Student Home");
+			
 		} catch (Exception es) {
 			es.printStackTrace();
 		}
@@ -97,16 +93,10 @@ public class studController {
 	private void onStudSignOut() {
 		System.out.println("Going back to login Screen");
 		try {
-			//new stage
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "main.fxml"));
+			//--------------------Go to Login Page -------------
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "MainController.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setTitle("School");
-			stage.setScene(new Scene(root1));
-			stage.show();
-			//close current stage
-			Stage finale = (Stage) MenuBtn.getScene().getWindow();
-			finale.close();
+			Main.setContent(root1, "Login Home");
 		} catch (Exception es) {
 			es.printStackTrace();
 		}

@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javafx.scene.control.Alert;
-import main.java.org.javafx.studentsmanagementsystem.controller.mainController;
+import main.java.org.javafx.studentsmanagementsystem.controller.MainController;
 
 public class SQLiteJDBC {
 	public static void makeDb() {
@@ -62,7 +62,7 @@ public class SQLiteJDBC {
 			System.out.println("Opened database successfully");
 			
 			if (emailAlreadyExistsIn("p", email)) {
-				mainController.showAlert(Alert.AlertType.WARNING, "This E-mail Already exists", "Try Again!");
+				MainController.showAlert(Alert.AlertType.WARNING, "This E-mail Already exists", "Try Again!");
 				return;
 			}
 			
@@ -71,7 +71,7 @@ public class SQLiteJDBC {
 			stmt.executeUpdate(sql);
 			
 			//successful registration
-			mainController.showAlert(Alert.AlertType.INFORMATION, "Successful Registration", "Now you can connect!");
+			MainController.showAlert(Alert.AlertType.INFORMATION, "Successful Registration", "Now you can connect!");
 			stmt.close();
 			c.commit();
 			c.close();
@@ -93,7 +93,7 @@ public class SQLiteJDBC {
 			System.out.println("Opened database successfully");
 			
 			if (emailAlreadyExistsIn("s", email)) {
-				mainController.showAlert(Alert.AlertType.WARNING, "This E-mail Already exists", "Try Again!");
+				MainController.showAlert(Alert.AlertType.WARNING, "This E-mail Already exists", "Try Again!");
 				return;
 			}
 			stmt = c.createStatement();
@@ -101,7 +101,7 @@ public class SQLiteJDBC {
 			stmt.executeUpdate(sql);
 			
 			//successful registration
-			mainController.showAlert(Alert.AlertType.INFORMATION, "Successful Registration", "Now you can connect!");
+			MainController.showAlert(Alert.AlertType.INFORMATION, "Successful Registration", "Now you can connect!");
 			stmt.close();
 			c.commit();
 			c.close();
@@ -251,7 +251,7 @@ public class SQLiteJDBC {
 			
 			stmt = c.createStatement();
 			
-			String studid = mainController.addThingies(mainController.stud.getStudId().toString());
+			String studid = MainController.addThingies(MainController.stud.getStudId().toString());
 			
 			//            SELECT * FROM PROFESSOR WHERE PROFESSOR.COURSE NOT IN(SELECT PROFESSOR.COURSE FROM PROFESSOR,ENROLLMENTS WHERE PROFESSOR.COURSE = ENROLLMENTS.COURSE AND STUDID = 3)
 			ResultSet rs = stmt.executeQuery("SELECT * FROM PROFESSOR WHERE " + "PROFESSOR.COURSE NOT IN "
@@ -304,7 +304,7 @@ public class SQLiteJDBC {
 			
 			stmt = c.createStatement();
 			
-			String studid = mainController.addThingies(mainController.stud.getStudId().toString());
+			String studid = MainController.addThingies(MainController.stud.getStudId().toString());
 			
 			ResultSet rs = stmt.executeQuery("SELECT * FROM PROFESSOR,ENROLLMENTS WHERE " + "PROFESSOR.COURSE = ENROLLMENTS.COURSE AND STUDID = " + studid + ";");
 			
@@ -341,7 +341,7 @@ public class SQLiteJDBC {
 	}
 	
 	public static void enroll(String CourseName) {
-		Integer studid = mainController.stud.getStudId();
+		Integer studid = MainController.stud.getStudId();
 		
 		Connection c = null;
 		Statement stmt = null;
@@ -353,11 +353,11 @@ public class SQLiteJDBC {
 			System.out.println("Opened database successfully");
 			
 			stmt = c.createStatement();
-			String sql = "INSERT INTO ENROLLMENTS (STUDID,COURSE) " + "VALUES (" + studid + "," + mainController.addThingies(CourseName) + ");";
+			String sql = "INSERT INTO ENROLLMENTS (STUDID,COURSE) " + "VALUES (" + studid + "," + MainController.addThingies(CourseName) + ");";
 			stmt.executeUpdate(sql);
 			
 			//successful registration
-			mainController.showAlert(Alert.AlertType.INFORMATION, "Successful Enrollment", "Now you can be rated!");
+			MainController.showAlert(Alert.AlertType.INFORMATION, "Successful Enrollment", "Now you can be rated!");
 			stmt.close();
 			c.commit();
 			c.close();
@@ -385,7 +385,7 @@ public class SQLiteJDBC {
 			
 			stmt = c.createStatement();
 			
-			String profscourse = mainController.addThingies(mainController.prof.getCourse());
+			String profscourse = MainController.addThingies(MainController.prof.getCourse());
 			System.out.println("Professor's Course: " + profscourse);
 			//            select * from STUDENTS where STUDID IN (select STUDID from ENROLLMENTS WHERE COURSE = 'r')
 			//            SELECT * FROM STUDENTS,ENROLLMENTS WHERE STUDENTS.STUDID = ENROLLMENTS.STUDID AND COURSE = 'r'
@@ -433,9 +433,9 @@ public class SQLiteJDBC {
 			c.setAutoCommit(false);
 			System.out.println("Opened database successfully");
 			
-			String profsrate = mainController.addThingies(gr.getGrade().toString());
-			String studid = mainController.addThingies(gr.getStudId().toString());
-			String profscourse = mainController.addThingies(mainController.prof.getCourse());
+			String profsrate = MainController.addThingies(gr.getGrade().toString());
+			String studid = MainController.addThingies(gr.getStudId().toString());
+			String profscourse = MainController.addThingies(MainController.prof.getCourse());
 			
 			System.out.println("\ngrade: " + profsrate + "\nSTUDID: " + studid + "\nPROFID" + profscourse);
 			
@@ -444,7 +444,7 @@ public class SQLiteJDBC {
 			stmt.executeUpdate(sql);
 			
 			//successful registration
-			mainController.showAlert(Alert.AlertType.INFORMATION, "Successful Rating", "Now you can see the grade you gave!");
+			MainController.showAlert(Alert.AlertType.INFORMATION, "Successful Rating", "Now you can see the grade you gave!");
 			stmt.close();
 			c.commit();
 			c.close();

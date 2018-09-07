@@ -19,7 +19,7 @@ import main.java.org.javafx.studentsmanagementsystem.application.Main;
 import main.java.org.javafx.studentsmanagementsystem.model.Grade;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 
-public class profController {
+public class ProfessorController {
 	@FXML
 	private Label profControllerId;
 	@FXML
@@ -43,15 +43,14 @@ public class profController {
 	
 	@FXML
 	public void initialize() {
-		profControllerId.setText(mainController.prof.getId().toString());
-		profControllerName.setText(mainController.prof.getName());
+		profControllerId.setText(( "" + MainController.prof.getId() ));
+		profControllerName.setText(MainController.prof.getName());
 		
 		addData();
 		
-		profStudIdColumn.setCellValueFactory(
-				//"CourseName" is taken from Grade.java class
-				new PropertyValueFactory<Grade,String>("studId"));
-		
+		PropertyValueFactory<Grade,String> g1;
+		g1 = new PropertyValueFactory<Grade,String>("studId");
+		profStudIdColumn.setCellValueFactory(g1);
 		profStudNameColumn.setCellValueFactory(new PropertyValueFactory<Grade,String>("StudName"));
 		
 		profGradeColumn.setCellValueFactory(new PropertyValueFactory<Grade,String>("grade"));
@@ -60,16 +59,16 @@ public class profController {
 		profTableView.setItems(registeredData);
 	}
 	
-	public void onButtonClickProf(ActionEvent e) {
+	public void onButtonClickProf(ActionEvent __) {
 		Grade gr = null;
 		Integer grade = null;
 		System.out.println("Trying to grade a student...");
 		
 		try {
 			gr = profTableView.getSelectionModel().getSelectedItem();
-		} catch (java.lang.NullPointerException es) {
-			mainController.showAlert(Alert.AlertType.WARNING, "You need to choose someone", "You haven't selected a student!");
-			es.printStackTrace();
+		} catch (java.lang.NullPointerException ¢) {
+			MainController.showAlert(Alert.AlertType.WARNING, "You need to choose someone", "You haven't selected a student!");
+			¢.printStackTrace();
 			return;
 		}
 		
@@ -80,10 +79,8 @@ public class profController {
 		
 		// Traditional way to get the response value.
 		Optional<String> result = dialog.showAndWait();
-		if (result.isPresent()) {
-			
+		if (result.isPresent())
 			System.out.println("Your grade: " + result.get());
-		}
 		
 		// The Java 8 way to get the response value (with lambda expression).
 		//        result.ifPresent(name -> System.out.println("Your grade: " + name));
@@ -91,12 +88,12 @@ public class profController {
 		try {
 			grade = Integer.parseInt(result.get());
 			if (!between(grade, 0, 10)) {
-				mainController.showAlert(Alert.AlertType.WARNING, "Wrong Input", "Grade must be an integer between 0 and 10");
+				MainController.showAlert(Alert.AlertType.WARNING, "Wrong Input", "Grade must be an integer between 0 and 10");
 				return;
 			}
-		} catch (java.lang.NumberFormatException ex) {
-			mainController.showAlert(Alert.AlertType.WARNING, "Wrong Input", "Grade must be an integer between 0 and 10");
-			ex.printStackTrace();
+		} catch (java.lang.NumberFormatException ¢) {
+			MainController.showAlert(Alert.AlertType.WARNING, "Wrong Input", "Grade must be an integer between 0 and 10");
+			¢.printStackTrace();
 			return;
 		}
 		
@@ -105,7 +102,7 @@ public class profController {
 			gr.setGrade(grade);
 			System.out.println("Επιτυχής Βαθμολόγηση");
 		} catch (java.lang.RuntimeException ex) {
-			mainController.showAlert(Alert.AlertType.WARNING, "You need to choose someone", "You haven't selected a student!");
+			MainController.showAlert(Alert.AlertType.WARNING, "You need to choose someone", "You haven't selected a student!");
 			ex.printStackTrace();
 			return;
 		}
@@ -127,18 +124,11 @@ public class profController {
 	
 	@FXML
 	private void onProfSignOut() {
-		System.out.println("Going back to login Screen");
 		try {
-			//new stage
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "main.fxml"));
+			//--------------------Go to Login Page -------------
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "MainController.fxml"));
 			Parent root1 = (Parent) fxmlLoader.load();
-			Stage stage = new Stage();
-			stage.setTitle("Εκπαιδευτικό Ίδρυμα");
-			stage.setScene(new Scene(root1));
-			stage.show();
-			//close current stage
-			Stage finale = (Stage) profControllerId.getScene().getWindow();
-			finale.close();
+			Main.setContent(root1, "Login Home");
 		} catch (Exception es) {
 			es.printStackTrace();
 		}

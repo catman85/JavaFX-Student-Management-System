@@ -17,7 +17,7 @@ import main.java.org.javafx.studentsmanagementsystem.model.Professor;
 import main.java.org.javafx.studentsmanagementsystem.model.SQLiteJDBC;
 import main.java.org.javafx.studentsmanagementsystem.model.Student;
 
-public class mainController {
+public class MainController {
 	
 	@FXML
 	private ToggleButton signInToggle;
@@ -81,18 +81,11 @@ public class mainController {
 			}
 			
 			try {
-				//new stage
-				System.out.println("going to students dashboard\n");
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "stud.fxml"));
+				//--------------------Go to student  home-------------
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "StudentController.fxml"));
 				Parent root1 = (Parent) fxmlLoader.load();
-				Stage stage = new Stage();
-				stage.setTitle("Student Home");
-				stage.setScene(new Scene(root1));
-				stage.show();
-				//                new studController(this.stud);
-				//close current stage
-				Stage finale = (Stage) signIn.getScene().getWindow();
-				finale.close();
+				Main.setContent(root1, "Student home");
+				
 			} catch (Exception es) {
 				es.printStackTrace();
 			}
@@ -107,18 +100,12 @@ public class mainController {
 			}
 			
 			try {
-				//new stage
-				System.out.println("going to professors dashboard\n");
-				System.out.println(prof.getCourse());
-				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "prof.fxml"));
+				
+				//--------------------Go to professor home-------------
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Main.FXMLS + "ProfessorController.fxml"));
 				Parent root1 = (Parent) fxmlLoader.load();
-				Stage stage = new Stage();
-				stage.setTitle("Professor Home");
-				stage.setScene(new Scene(root1));
-				stage.show();
-				//close current stage
-				Stage finale = (Stage) signIn.getScene().getWindow();
-				finale.close();
+				Main.setContent(root1, "Professor Home");
+				
 			} catch (Exception ep) {
 				ep.printStackTrace();
 			}

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="specialJFXTabPane" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.studentsmanagementsystem.controller.MainController">
+   <children>
+      <JFXTabPane>
+         <tabs>
+            <Tab text="Log In">
+               <content>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="304.0" prefWidth="592.0" style="-fx-background-color: #505050;">
+                     <children>
+                        <Button fx:id="signIn" focusTraversable="false" layoutX="227.0" layoutY="239.0" mnemonicParsing="false" onAction="#onClickSignIn" prefHeight="37.0" prefWidth="186.0" style="-fx-background-radius: 0;" styleClass="jfx-button-green" text="Log In">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-user-circle" iconSize="32" layoutX="110.0" layoutY="114.0" />
+                        <TextField fx:id="signMail" layoutX="178.0" layoutY="87.0" prefHeight="30.0" prefWidth="342.0" promptText="E-mail" styleClass="dark-text-field" />
+                        <PasswordField fx:id="signPass" layoutX="178.0" layoutY="165.0" prefHeight="30.0" prefWidth="345.0" promptText="Password" styleClass="dark-text-area" />
+                        <FontIcon iconColor="WHITE" iconLiteral="fas-key" iconSize="24" layoutX="110.0" layoutY="192.0" />
+                        <JFXRadioButton layoutX="227.0" layoutY="29.0" selected="true" styleClass="white-black-label" text="Student">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="loginType" />
+                           </toggleGroup>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                        <JFXRadioButton layoutX="333.0" layoutY="29.0" styleClass="white-black-label" text="Teacher" toggleGroup="$loginType">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXRadioButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Register">
+               <content>
+                  <JFXTabPane side="LEFT">
+                     <tabs>
+                        <Tab text="Student">
+                           <content>
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #505050;">
+                                 <children>
+                                    <TextField fx:id="studName" layoutX="93.0" layoutY="62.0" promptText="Name" styleClass="dark-text-area" />
+                                    <TextField fx:id="studMail" layoutX="93.0" layoutY="161.0" promptText="E-mail" styleClass="dark-text-area" />
+                                    <Button fx:id="registerStud" layoutX="195.0" layoutY="247.0" mnemonicParsing="false" onAction="#onRegisterStud" prefHeight="55.0" prefWidth="179.0" text="Register">
+                                       <styleClass>
+                                          <String fx:value="jfx-button" />
+                                          <String fx:value="jfx-button-green" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Button>
+                                    <PasswordField fx:id="studPass" layoutX="360.0" layoutY="63.0" promptText="Password" styleClass="dark-text-area" />
+                                    <PasswordField fx:id="studPass2" layoutX="360.0" layoutY="161.0" promptText="Password Again" styleClass="dark-text-area" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-user-circle" iconSize="32" layoutX="28.0" layoutY="87.0" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-key" iconSize="32" layoutX="317.0" layoutY="87.0" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="gmi-email" iconSize="32" layoutX="36.0" layoutY="186.0" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-key" iconSize="32" layoutX="317.0" layoutY="186.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="Teacher">
+                           <content>
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #505050;">
+                                 <children>
+                                    <TextField fx:id="profName" layoutX="93.0" layoutY="31.0" promptText="Name" styleClass="dark-text-area" />
+                                    <TextField fx:id="profMail" layoutX="93.0" layoutY="96.0" promptText="e-mail" styleClass="dark-text-area" />
+                                    <Button fx:id="registerProf" layoutX="202.0" layoutY="254.0" mnemonicParsing="false" onAction="#onRegisterProf" prefHeight="57.0" prefWidth="174.0" text="Register">
+                                       <styleClass>
+                                          <String fx:value="jfx-button" />
+                                          <String fx:value="jfx-button-green" />
+                                       </styleClass>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Button>
+                                    <TextField fx:id="profCourse" layoutX="207.0" layoutY="184.0" promptText="Course" styleClass="dark-text-area" />
+                                    <PasswordField fx:id="profPass" layoutX="360.0" layoutY="32.0" promptText="Password" styleClass="dark-text-area" />
+                                    <PasswordField fx:id="profPass2" layoutX="360.0" layoutY="96.0" promptText="Password Again" styleClass="dark-text-area" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-user-circle" iconSize="32" layoutX="34.0" layoutY="59.0" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="gmi-email" iconSize="32" layoutX="34.0" layoutY="128.0" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-key" iconSize="32" layoutX="311.0" layoutY="59.0" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="fas-key" iconSize="32" layoutX="311.0" layoutY="121.0" />
+                                    <FontIcon iconColor="WHITE" iconLiteral="gmi-import-contacts" iconSize="55" layoutX="145.0" layoutY="224.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </JFXTabPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</StackPane>

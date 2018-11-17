@@ -1,11 +1,14 @@
-# This application is a collaboration between two University Students
-
-The original project can be found here -> https://github.com/catman85/JavaFX-Student-Management-System
-
 # JavaFX Student Management System
 A Java application for managing students teachers, and grades.
 
-# Screenshots
+[![GitHub stars](https://img.shields.io/github/stars/catman85/JavaFX-Student-Management-System.svg?style=flat-square)](https://github.com/catman85/Android-Simple-Messaging-App-UI/stargazers) [![GitHub forks](https://img.shields.io/github/forks/catman85/JavaFX-Student-Management-System.svg?style=flat-square)](https://github.com/catman85/JavaFX-Student-Management-System/network) [![HitCount](http://hits.dwyl.io/catman85/JavaFX-Student-Management-System.svg)](http://hits.dwyl.io/catman85/JavaFX-Student-Management-System) [![GitHub license](https://img.shields.io/github/license/catman85/JavaFX-Student-Management-System.svg?style=flat-square)](https://github.com/catman85/JavaFX-Student-Management-System/blob/master/LICENSE)
+
+## Use Case
+Teachers and Students register in the platform.
+Students log in the platform to enroll in courses and see the grades they received.
+Teachers log in the platform to view their students and give them grades.
+
+## Screenshots
 
 | Login Screen  |  Student Enroll
 |:-:|:-:|
@@ -26,7 +29,7 @@ A Java application for managing students teachers, and grades.
 - [**Sqlite-jdbc**](https://github.com/xerial/sqlite-jdbc) SQLite JDBC Driver .
 - [**FX-BorderlessScene**](https://github.com/goxr3plus/FX-BorderlessScene) Undecorated JavaFX Scene with implemented move, resize, 
 
-# How to fork and support this project
+## How to fork and support this project
 
 To build this project , you will need:
 
@@ -43,13 +46,9 @@ This is a Maven project you just use :
 mvn clean install 
 ```
 
-
-## Use Case
-Teachers and Students register in the platform.
-Students log in the platform to enroll in courses and see the grades they received.
-Teachers log in the platform to view their students and give them grades.
-
-#### The "passwords.txt" file
+## The "passwords.txt" file
 In the root directory of the repo you will find 
 a file with a list of passwords for students and teachers.
 Feel free to delete the "my.db" file that is created by SQLite and start a fresh one.
+
+## [Contributors](https://github.com/catman85/JavaFX-Student-Management-System/blob/master/CONTRIBUTORS.md) ❤️
